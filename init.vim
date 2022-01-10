@@ -1,3 +1,6 @@
+runtime autoload/pathogen.vim
+execute pathogen#infect()
+
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
@@ -23,3 +26,14 @@ set ttyfast                 " Speed up scrolling in Vim
 set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 set encoding=UTF-8
+
+" set runtimepath^=~/.config/nvim/plugged/dracula-vim/autoload/dracula.vim
+
+" color schemes
+ if (has("termguicolors"))
+ set termguicolors
+ endif
+ syntax enable
+" colorscheme evening
+colorscheme dracula
+ 
