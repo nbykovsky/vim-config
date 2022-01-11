@@ -24,16 +24,29 @@ set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 set encoding=UTF-8
 
-call plug#begin('~/.config/nvim/plugged')
+" disable normal arrows
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
-    Plug 'dracula/vim'
 
-call plug#end()
+" -----------------------------------------------------------------------------
+" ----------------------PLUGINS------------------------------------------------
+" -----------------------------------------------------------------------------
+packadd minpac
+call minpac#init()
+
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('dracula/vim')
+
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
 
 
-
-" set runtimepath^=~/.config/nvim/plugged/dracula-vim/autoload/dracula.vim
-
+" -----------------------------------------------------------------------------
+" ---------------------THEMS---------------------------------------------------
+" -----------------------------------------------------------------------------
 " color schemes
  if (has("termguicolors"))
  set termguicolors
@@ -41,4 +54,3 @@ call plug#end()
  syntax enable
 " colorscheme evening
 colorscheme dracula
- 
